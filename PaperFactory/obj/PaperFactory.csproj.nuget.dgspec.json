@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\denni\\Desktop\\PaperFactory\\PaperFactory\\PaperFactory.csproj": {}
+    "C:\\Users\\kuzob\\Source\\Repos\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj": {}
   },
   "projects": {
-    "C:\\Users\\denni\\Desktop\\PaperFactory\\PaperFactory\\PaperFactory.csproj": {
+    "C:\\Users\\kuzob\\Source\\Repos\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\denni\\Desktop\\PaperFactory\\PaperFactory\\PaperFactory.csproj",
+        "projectUniqueName": "C:\\Users\\kuzob\\Source\\Repos\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
         "projectName": "PaperFactory",
-        "projectPath": "C:\\Users\\denni\\Desktop\\PaperFactory\\PaperFactory\\PaperFactory.csproj",
-        "packagesPath": "C:\\Users\\denni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\denni\\Desktop\\PaperFactory\\PaperFactory\\obj\\",
+        "projectPath": "C:\\Users\\kuzob\\Source\\Repos\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
+        "packagesPath": "C:\\Users\\kuzob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kuzob\\Source\\Repos\\Learning_PaperFactory\\PaperFactory\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\denni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kuzob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

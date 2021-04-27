@@ -1,20 +1,20 @@
-﻿PaperFactory
-1.0.0.0
+﻿PaperFactory_g5azbd24_wpftmp
+
 
 winexe
 C#
 .cs
 C:\Users\kuzob\Source\Repos\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\
-PaperFactory
+PaperFactory_g5azbd24_wpftmp
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\kuzob\Source\Repos\Learning_PaperFactory\PaperFactory\App.xaml
 3-1018047692
 
-9-1072750639
-192-1533232326
+111292690566
+3841228502644
 MainWindow.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;
 
-False
+True
 

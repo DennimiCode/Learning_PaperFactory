@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Linq;
 using System.Windows.Controls;
+using PaperFactory.Data;
 
 namespace PaperFactory.Pages
 {
@@ -8,6 +11,7 @@ namespace PaperFactory.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
+        ApplicationDataContext AppDbContext = new ApplicationDataContext();
         public LoginPage()
         {
             InitializeComponent();
@@ -20,7 +24,23 @@ namespace PaperFactory.Pages
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string EnteredLogin = UserLoginTextBox.Text.Trim();
+                string EnteredPassword = UserPasswordPasswordBox.Password;
 
+                string DbLogin = AppDbContext.Users.Where(n => n.Login == EnteredLogin && n.Password == EnteredPassword).First().Login;
+                string DbPassword = AppDbContext.Users.Where(n => n.Login == EnteredLogin && n.Password == EnteredPassword).First().Password;
+
+                if (EnteredLogin == DbLogin && EnteredPassword == DbPassword)
+                {
+                    Manager.MainFrame.Navigate(new Pages.MaterialsPage());
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не верный логин или пароль!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

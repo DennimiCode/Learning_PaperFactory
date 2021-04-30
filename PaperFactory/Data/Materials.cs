@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaperFactory.Data
 {
-    public class Material
+    public class Materials
     {
         [Key]
         public int Id { get; set; }
@@ -17,9 +17,9 @@ namespace PaperFactory.Data
         public int TypeOfMetric { get; set; }
 
         [ForeignKey("TypeOfMetric")]
-        public Metric Metric { get; set; }
+        public Metrics Metric { get; set; }
 
         [ForeignKey("TypeOfMaterial")]
-        public MaterialType MaterialType { get; set; }
+        public MaterialsTypes MaterialType { get; set; }
     }
 }

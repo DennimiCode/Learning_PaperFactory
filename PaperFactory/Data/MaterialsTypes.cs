@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PaperFactory.Data
 {
-    public class MaterialType
+    public class MaterialsTypes
     {
         [Key]
         public int Id { get; set; }
         public string MaterialTypeName { get; set; }
 
-        public List<Material> Materials { get; set; }
+        public List<Materials> Materials { get; set; }
     }
 }

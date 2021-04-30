@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaperFactory.Data
 {
-    public class User
+    public class Users
     {
         [Key]
         public int Id { get; set; }

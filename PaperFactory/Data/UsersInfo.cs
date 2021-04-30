@@ -11,6 +11,6 @@ namespace PaperFactory.Data
         public string Lastname { get; set; }
         public string Middlename { get; set; }
 
-        public List<User> Users { get; set; }
+        public List<Users> Users { get; set; }
     }
 }

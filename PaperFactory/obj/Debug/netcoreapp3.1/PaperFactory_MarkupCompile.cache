@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\
 PaperFactory
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\App.xaml
-3-1018047692
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\App.xaml
+4-725921288
 
-131781581632
-213-1583262791
-MainWindow.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;
+14-946457079
+213-945708133
+MainWindow.xaml;Pages\LoginPage.xaml;Pages\MaterialsPage.xaml;Pages\RegisterPage.xaml;
 
 False
 

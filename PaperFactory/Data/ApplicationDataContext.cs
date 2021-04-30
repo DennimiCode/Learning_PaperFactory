@@ -11,13 +11,13 @@ namespace PaperFactory.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=wsr_factory;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0CN3VVB;Database=wsr_factory;Trusted_Connection=True;");
         }
 
-        public DbSet<UsersInfo> UsersInfos { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Metric> Metrics { get; set; }
-        public DbSet<MaterialType> MaterialTypes { get; set; }
-        public DbSet<Material> Materials { get; set; }
+        public DbSet<UsersInfo> UsersInfo { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Metrics> Metrics { get; set; }
+        public DbSet<MaterialsTypes> MaterialsTypes { get; set; }
+        public DbSet<Materials> Materials { get; set; }
     }
 }

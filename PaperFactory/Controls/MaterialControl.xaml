@@ -20,6 +20,7 @@
         <Label Grid.Column="1" x:Name="MinAmountLable" Content="Минимальное количество: " FontFamily="Candara" FontSize="16" Margin="0,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Grid.Column="1" x:Name="SuppliersLable" Content="Поставщики: " FontFamily="Candara" FontSize="16" FontWeight="Bold" Margin="0,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Grid.Column="2" x:Name="AmountLable" Content="Остаток: " FontFamily="Candara" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
+        <Label Grid.Column="2" x:Name="PriceLable" Content="Цена: " FontFamily="Candara" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0"/>
 
     </Grid>
 </UserControl>

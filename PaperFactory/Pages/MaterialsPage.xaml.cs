@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using PaperFactory.Data;
 using PaperFactory.Controls;
-using System;
 
 namespace PaperFactory.Pages
 {
@@ -13,8 +13,10 @@ namespace PaperFactory.Pages
     /// </summary>
     public partial class MaterialsPage : Page
     {
-        ApplicationDataContext AppDbContext = new ApplicationDataContext();
-        List<string> Sorts = new List<string>()
+        private int PagePosition = 15;
+        private ApplicationDataContext AppDbContext = new ApplicationDataContext();
+        List<MaterialControl> MaterialControls = new List<MaterialControl>();
+        List<string> Sorts = new List<string>
         {
             "Сортировка",
             "наименование А-Я",
@@ -24,7 +26,7 @@ namespace PaperFactory.Pages
             "стоимость по возрастанию",
             "стоимость по убыванию"
         };
-        List<string> Filters = new List<string>() { "Фильтрация", "Все типы" };
+        List<string> Filters = new List<string> { "Фильтрация", "Все типы" };
         public MaterialsPage()
         {
             InitializeComponent();
@@ -32,30 +34,177 @@ namespace PaperFactory.Pages
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (PagePosition <= 0)
+                {
 
+                }
+                else
+                {
+                    MaterialsListBox.Children.Clear();
+                }
+                PagePosition -= 15;
+                for (int i = PagePosition + 15; i > PagePosition; i--)
+                {
+                    if (PagePosition >= MaterialControls.Count || PagePosition < 0 || i < 0 || i >= MaterialControls.Count)
+                    {
+                        PagePosition = 0;
+                    }
+                    else
+                    {
+                        MaterialsListBox.Children.Add(MaterialControls[i]);
+                    }
+                }
+            }
+            catch (ArgumentException)
+            {
+
+            }
         }
 
         private void GoForwardButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (PagePosition <= 0)
+                {
 
+                }
+                else
+                {
+                    MaterialsListBox.Children.Clear();
+                }
+                PagePosition += 15;
+                for (int i = PagePosition - 15; i < PagePosition; i++)
+                {
+                    if (PagePosition >= MaterialControls.Count || PagePosition < 0 || i < 0 || i >= MaterialControls.Count)
+                    {
+                        PagePosition = 0;
+                    }
+                    else
+                    {
+                        MaterialsListBox.Children.Add(MaterialControls[i]);
+                    }
+                }
+            }
+            catch (ArgumentException)
+            {
+
+            }
         }
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (SearchTextBox.Text != "" && SearchTextBox.Text != "Введите для поиска")
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.FindAll(m => m.MaterialType == SearchTextBox.Text);
 
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
         }
 
         private void SortComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if ((string)SortComboBox.SelectedItem == Sorts[0])
+            {
+                MaterialsListBox.Children.Clear();
 
+                foreach (var materialControl in MaterialControls)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[1])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderBy(m => m.MaterialName);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[2])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderByDescending(m => m.MaterialName);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[3])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderBy(m => m.WhAmount);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[4])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderByDescending(m => m.WhAmount);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[5])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderBy(m => m.Price);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else if ((string)SortComboBox.SelectedItem == Sorts[6])
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsSorted = MaterialControls.OrderByDescending(m => m.Price);
+
+                foreach (var materialControl in materialControlsSorted)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
         }
 
         private void FilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if ((string)FilterComboBox.SelectedItem == Filters[0] || (string)FilterComboBox.SelectedItem == Filters[1])
+            {
+                MaterialsListBox.Children.Clear();
 
+                foreach (var materialControl in MaterialControls)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            else
+            {
+                MaterialsListBox.Children.Clear();
+                var materialControlsFiltered = MaterialControls.Where(m => m.MaterialType == (string)FilterComboBox.SelectedItem).ToList();
+
+                foreach (var materialControl in materialControlsFiltered)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
         }
 
-        private void Page_Initialized(object sender, System.EventArgs e)
+        private void Page_Initialized(object sender, EventArgs e)
         {
             var dbMaterialTypes = AppDbContext.MaterialsTypes.Select(t => t.MaterialTypeName).ToList();
 
@@ -84,6 +233,7 @@ namespace PaperFactory.Pages
                     Type = mt.MaterialTypeName, 
                     Img = m.MaterialImage, 
                     MinWarehouseAmount = m.MinWarehouseAmount,
+                    Price = m.Price,
                     Amount = m.WarehouseAmount
                 });
             foreach (var dbMaterial in dbMaterials)
@@ -96,7 +246,7 @@ namespace PaperFactory.Pages
 
                 if (dbSuppliers.Count == 0)
                 {
-                    dbSuppliers.Add("отсутствуют");
+                    dbSuppliers.Add("данные отсутствуют");
                 }
 
                 Material material = new Material
@@ -106,6 +256,7 @@ namespace PaperFactory.Pages
                     MinAmount = dbMaterial.MinWarehouseAmount,
                     Image = dbMaterial.Img,
                     WhAmount = dbMaterial.Amount,
+                    Price = dbMaterial.Price,
                     Suppliers = dbSuppliers
                 };
 
@@ -121,10 +272,18 @@ namespace PaperFactory.Pages
                     material.NameOfMaterial,
                     material.MinAmount,
                     material.WhAmount,
+                    material.Price,
                     material.Suppliers
                 );
 
+                MaterialControls.Add(materialControl);
                 MaterialsListBox.Children.Add(materialControl);
+            }
+
+            MaterialsListBox.Children.Clear();
+            for (int i = 0; i <= PagePosition; i++)
+            {
+                MaterialsListBox.Children.Add(MaterialControls[i]);
             }
         }
 
@@ -136,12 +295,33 @@ namespace PaperFactory.Pages
 
         private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SearchTextBox.Text = "";
+            if (SearchTextBox.Text != "" && SearchTextBox.Text != "Введите для поиска")
+            {
+
+            }
+            else
+            {
+                SearchTextBox.Text = "";
+            }
         }
 
         private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            SearchTextBox.Text = "Введите для поиска";
+            if (SearchTextBox.Text != "")
+            {
+
+            }
+            else
+            {
+                SearchTextBox.Text = "Введите для поиска";
+                MaterialsListBox.Children.Clear();
+
+                foreach (var materialControl in MaterialControls)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
+            }
+            
         }
     }
 
@@ -151,6 +331,7 @@ namespace PaperFactory.Pages
         public string NameOfMaterial { get; set; }
         public decimal MinAmount { get; set; }
         public decimal WhAmount { get; set; }
+        public decimal Price { get; set; }
 
         private string _Image = "";
         public string Image

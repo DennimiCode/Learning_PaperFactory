@@ -16,9 +16,10 @@ namespace PaperFactory.Controls
         public string MaterialName { get; set; }
         public decimal MinWhAmount { get; set; }
         public decimal WhAmount { get; set; }
+        public decimal Price { get; set; }
 
         public List<string> MaterialSuppliers = new List<string>();
-        public MaterialControl(string image, string type, string name, decimal minAmount, decimal amount, List<string> suppliers)
+        public MaterialControl(string image, string type, string name, decimal minAmount, decimal amount, decimal price, List<string> suppliers)
         {
             InitializeComponent();
 
@@ -27,12 +28,14 @@ namespace PaperFactory.Controls
             MaterialName = name;
             MinWhAmount = minAmount;
             WhAmount = amount;
+            Price = price;
             MaterialSuppliers = suppliers;
 
             MaterialImage.Source = new BitmapImage(new Uri(MaterialImageSource, UriKind.Absolute));
             MinAmountLable.Content += $"{MinWhAmount} шт";
             AmountLable.Content += $"{WhAmount} шт";
             TypeNameMaterialLable.Content = $"{MaterialType} | {MaterialName}";
+            PriceLable.Content += $"{Price} руб.";
 
             foreach (string supplier in MaterialSuppliers)
             {

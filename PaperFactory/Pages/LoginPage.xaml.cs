@@ -3,6 +3,7 @@ using System.Windows;
 using System.Linq;
 using System.Windows.Controls;
 using PaperFactory.Data;
+using System.Windows.Input;
 
 namespace PaperFactory.Pages
 {
@@ -37,7 +38,7 @@ namespace PaperFactory.Pages
                     Manager.MainFrame.Navigate(new Pages.MaterialsPage());
                 }
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("Не верный логин или пароль!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }

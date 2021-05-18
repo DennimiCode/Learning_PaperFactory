@@ -6,9 +6,45 @@
       xmlns:local="clr-namespace:PaperFactory.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MaterialsPage">
+      Title="MaterialsPage" Initialized="Page_Initialized">
 
-    <Grid>
+    <Grid Background="#FFFFFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox TabIndex="0" x:Name="SearchTextBox" Text="Введите для поиска" Grid.Column="0" Height="40" Width="380" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="Candara" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="SearchTextBox_TextChanged" GotFocus="SearchTextBox_GotFocus" LostFocus="SearchTextBox_LostFocus"/>
+            <ComboBox TabIndex="1" x:Name="SortComboBox" Grid.Column="1" Height="40" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Candara" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" SelectionChanged="SortComboBox_SelectionChanged"/>
+            <ComboBox TabIndex="2" x:Name="FilterComboBox" Grid.Column="2" Height="40" Width="170" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Candara" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" SelectionChanged="FilterComboBox_SelectionChanged"/>
+
+        </Grid>
         
+        <ScrollViewer Grid.Row="1">
+            <StackPanel x:Name="MaterialsListBox">
+                
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Button TabIndex="3" x:Name="GoBackButton" Content="Назад" FontFamily="Candara" FontSize="14" Grid.Column="0" Height="25" Width="190" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="GoBackButton_Click"/>
+            <Button TabIndex="4" x:Name="AddMaterial" Content="Добавить материал" FontFamily="Candara" FontSize="14" Grid.Column="1" Width="190" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2" Click="AddMaterial_Click"/>
+            <Button TabIndex="5" x:Name="GoForwardButton" Content="Вперед" FontFamily="Candara" FontSize="14" Grid.Column="2" Height="25" Width="190" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="2" Click="GoForwardButton_Click"/>
+
+        </Grid>
     </Grid>
 </Page>

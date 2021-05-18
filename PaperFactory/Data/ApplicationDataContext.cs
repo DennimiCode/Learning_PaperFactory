@@ -11,7 +11,9 @@ namespace PaperFactory.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0CN3VVB;Database=wsr_factory;Trusted_Connection=True;");
+            // DESKTOP-0CN3VVB
+            // DENIS-PC
+            optionsBuilder.UseSqlServer(@"Server=DENIS-PC;Database=wsr_factory;Trusted_Connection=True;");
         }
 
         public DbSet<UsersInfo> UsersInfo { get; set; }
@@ -19,5 +21,6 @@ namespace PaperFactory.Data
         public DbSet<Metrics> Metrics { get; set; }
         public DbSet<MaterialsTypes> MaterialsTypes { get; set; }
         public DbSet<Materials> Materials { get; set; }
+        public DbSet<Suppliers> Suppliers { get; set; }
     }
 }

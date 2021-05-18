@@ -21,7 +21,7 @@
         <TextBox x:Name="LoginTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
         <PasswordBox x:Name="UserPasswordPasswordBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
         <PasswordBox x:Name="RepeatUserPasswordPasswordBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
-        <Button x:Name="RegisterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,130,0" Width="120" Height="20" Content="Зарегистрироваться" FontFamily="Candara" FontSize="12" Click="RegisterButton_Click"/>
-        <Button x:Name="GoBackButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="180,300,0,0" Width="70" Height="20" Content="Назад" FontFamily="Candara" FontSize="12" Click="GoBackButton_Click"/>
+        <Button x:Name="RegisterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,130,0" Width="120" Height="20" Content="Зарегистрироваться" FontFamily="Candara" FontSize="13" Click="RegisterButton_Click"/>
+        <Button x:Name="GoBackButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="180,300,0,0" Width="70" Height="20" Content="Назад" FontFamily="Candara" FontSize="13" Click="GoBackButton_Click"/>
     </Grid>
 </Page>

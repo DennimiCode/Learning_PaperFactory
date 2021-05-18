@@ -11,9 +11,9 @@
     <Grid Background="#FFFFFF">
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,205,50" Content="Логин:" FontFamily="Candara" FontSize="12"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,50,200,0" Content="Пароль:" FontFamily="Candara" FontSize="12"/>
-        <TextBox x:Name="UserLoginTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
-        <PasswordBox x:Name="UserPasswordPasswordBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
-        <Button x:Name="EnterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,150,0" Width="100" Height="20" Content="Вход" FontFamily="Candara" FontSize="12" Click="EnterButton_Click"/>
-        <Button x:Name="RegisterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="150,200,0,0" Width="100" Height="20" Content="Регистрация" FontFamily="Candara" FontSize="12" Click="RegisterButton_Click"/>
+        <TextBox TabIndex="0" x:Name="UserLoginTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
+        <PasswordBox TabIndex="1" x:Name="UserPasswordPasswordBox" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" Width="250" Height="20" FontFamily="Candara" FontSize="12"/>
+        <Button TabIndex="2" x:Name="EnterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,150,0" Width="100" Height="20" Content="Вход" FontFamily="Candara" FontSize="14" IsDefault="True" Click="EnterButton_Click"/>
+        <Button TabIndex="3" x:Name="RegisterButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="150,200,0,0" Width="100" Height="20" Content="Регистрация" FontFamily="Candara" FontSize="14" Click="RegisterButton_Click"/>
     </Grid>
 </Page>

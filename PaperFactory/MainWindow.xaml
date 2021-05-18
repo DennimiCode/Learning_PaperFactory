@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaperFactory"
         mc:Ignorable="d"
-        Title="Бумажная фабрика" Height="500" Width="850" MinHeight="500" MinWidth="850">
+        WindowStartupLocation="CenterScreen"
+        Title="Одежда для ручек" Height="500" Width="850" MinHeight="500" MinWidth="850" Closing="Window_Closing">
     <Grid Background="#FFFFFF">
         <Grid.RowDefinitions>
             <RowDefinition Height="88"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Бумажная фабрика" FontFamily="Candara" FontSize="14"/>
-        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Grid.Row="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Фабрика СИЗ 'Одежда для ручек'" FontFamily="Candara" FontSize="20"/>
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

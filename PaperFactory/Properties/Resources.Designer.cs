@@ -63,9 +63,9 @@ namespace PaperFactory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Черновик {
+        internal static byte[] Одежда_для_ручек {
             get {
-                object obj = ResourceManager.GetObject("Черновик", resourceCulture);
+                object obj = ResourceManager.GetObject("Одежда_для_ручек", resourceCulture);
                 return ((byte[])(obj));
             }
         }

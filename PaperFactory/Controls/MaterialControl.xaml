@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PaperFactory.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="800">
-    <Grid Background="#FFFFFF">
+    <Grid Background="#FFFFFF" x:Name="ControlGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>

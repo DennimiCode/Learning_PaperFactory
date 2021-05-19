@@ -13,6 +13,8 @@ namespace PaperFactory.Pages
     /// </summary>
     public partial class MaterialsPage : Page
     {
+        private const byte SEARCHSTEP = 3;
+
         private int PagePosition = 15;
         private ApplicationDataContext AppDbContext = new ApplicationDataContext();
         List<MaterialControl> MaterialControls = new List<MaterialControl>();
@@ -99,7 +101,15 @@ namespace PaperFactory.Pages
             if (SearchTextBox.Text != "" && SearchTextBox.Text != "Введите для поиска")
             {
                 MaterialsListBox.Children.Clear();
-                var materialControlsSorted = MaterialControls.FindAll(m => m.MaterialType == SearchTextBox.Text);
+                var materialControlsSorted = new List<MaterialControl>();
+
+                foreach (var materialControl in MaterialControls)
+                {
+                    if (SearchAlhorithm(SearchTextBox.Text, materialControl.MaterialName) <= SEARCHSTEP)
+                    {
+                        materialControlsSorted.Add(materialControl);
+                    }
+                }
 
                 foreach (var materialControl in materialControlsSorted)
                 {
@@ -322,6 +332,29 @@ namespace PaperFactory.Pages
                 }
             }
             
+        }
+
+        public static int SearchAlhorithm(string string1, string string2)
+        {
+            if (string1 == null) throw new ArgumentNullException(nameof(string1));
+            if (string2 == null) throw new ArgumentNullException(nameof(string2));
+
+            int diff;
+            int[,] m = new int[string1.Length + 1, string2.Length + 1];
+
+            for (int i = 0; i <= string1.Length; i++) { m[i, 0] = i; }
+            for (int j = 0; j <= string2.Length; j++) { m[0, j] = j; }
+
+            for (int i = 1; i <= string1.Length; i++)
+            {
+                for (int j = 1; j <= string2.Length; j++)
+                {
+                    diff = (string1[i - 1] == string2[j - 1]) ? 0 : 1;
+
+                    m[i, j] = Math.Min(Math.Min(m[i - 1, j] + 1, m[i, j - 1] + 1), m[i - 1, j - 1] + diff);
+                }
+            }
+            return m[string1.Length, string2.Length];
         }
     }
 

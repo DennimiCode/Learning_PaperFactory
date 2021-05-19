@@ -1,8 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace PaperFactory.Controls
 {
@@ -30,6 +30,15 @@ namespace PaperFactory.Controls
             WhAmount = amount;
             Price = price;
             MaterialSuppliers = suppliers;
+
+            if (WhAmount < MinWhAmount)
+            {
+                ControlGrid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f19292"));
+            }
+            else if (WhAmount == Math.Round(MinWhAmount / 100 * 300))
+            {
+                ControlGrid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ffba01"));
+            }
 
             MaterialImage.Source = new BitmapImage(new Uri(MaterialImageSource, UriKind.Absolute));
             MinAmountLable.Content += $"{MinWhAmount} шт";

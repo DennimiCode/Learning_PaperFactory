@@ -14,8 +14,9 @@ namespace PaperFactory.Pages
     public partial class MaterialsPage : Page
     {
         private const byte SEARCHSTEP = 3;
+        private const byte PAGESTEP = 15;
 
-        private int PagePosition = 15;
+        private int PagePosition = 0;
         private ApplicationDataContext AppDbContext = new ApplicationDataContext();
         List<MaterialControl> MaterialControls = new List<MaterialControl>();
         List<string> Sorts = new List<string>
@@ -36,63 +37,38 @@ namespace PaperFactory.Pages
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (PagePosition > 0)
             {
-                if (PagePosition <= 0)
-                {
-
-                }
-                else
-                {
-                    MaterialsListBox.Children.Clear();
-                }
-                PagePosition -= 15;
-                for (int i = PagePosition + 15; i > PagePosition; i--)
-                {
-                    if (PagePosition >= MaterialControls.Count || PagePosition < 0 || i < 0 || i >= MaterialControls.Count)
-                    {
-                        PagePosition = 0;
-                    }
-                    else
-                    {
-                        MaterialsListBox.Children.Add(MaterialControls[i]);
-                    }
-                }
+                PagePosition -= PAGESTEP;
             }
-            catch (ArgumentException)
+            MaterialsListBox.Children.Clear();
+            int i = 0;
+            foreach (var materialControl in MaterialControls.Skip(PagePosition))
             {
-
+                i++;
+                if (i <= PAGESTEP)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
             }
         }
 
         private void GoForwardButton_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (PagePosition + PAGESTEP < MaterialControls.Count)
             {
-                if (PagePosition <= 0)
-                {
-
-                }
-                else
-                {
-                    MaterialsListBox.Children.Clear();
-                }
-                PagePosition += 15;
-                for (int i = PagePosition - 15; i < PagePosition; i++)
-                {
-                    if (PagePosition >= MaterialControls.Count || PagePosition < 0 || i < 0 || i >= MaterialControls.Count)
-                    {
-                        PagePosition = 0;
-                    }
-                    else
-                    {
-                        MaterialsListBox.Children.Add(MaterialControls[i]);
-                    }
-                }
+                PagePosition += PAGESTEP;
             }
-            catch (ArgumentException)
-            {
+            MaterialsListBox.Children.Clear();
 
+            int i = 0;
+            foreach (var materialControl in MaterialControls.Skip(PagePosition))
+            {
+                i++;
+                if (i <= PAGESTEP)
+                {
+                    MaterialsListBox.Children.Add(materialControl);
+                }
             }
         }
 
@@ -291,7 +267,7 @@ namespace PaperFactory.Pages
             }
 
             MaterialsListBox.Children.Clear();
-            for (int i = 0; i <= PagePosition; i++)
+            for (int i = 0; i <= 15; i++)
             {
                 MaterialsListBox.Children.Add(MaterialControls[i]);
             }

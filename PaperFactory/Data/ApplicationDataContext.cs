@@ -13,7 +13,7 @@ namespace PaperFactory.Data
         {
             // DESKTOP-0CN3VVB
             // DENIS-PC
-            optionsBuilder.UseSqlServer(@"Server=DENIS-PC;Database=wsr_factory;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0CN3VVB;Database=wsr_factory;Trusted_Connection=True;");
         }
 
         public DbSet<UsersInfo> UsersInfo { get; set; }

@@ -221,3 +221,7 @@ C:\Users\denni\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.
 C:\Users\denni\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Controls\MaterialControl.baml
 C:\Users\denni\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\AddMaterialWindow.g.cs
 C:\Users\denni\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\AddMaterialWindow.baml
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\AddMaterialWindow.g.cs
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Controls\MaterialControl.g.cs
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\AddMaterialWindow.baml
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Controls\MaterialControl.baml

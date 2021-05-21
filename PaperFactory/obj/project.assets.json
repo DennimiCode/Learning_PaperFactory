@@ -5698,19 +5698,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\denni\\.nuget\\packages\\": {}
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denni\\Desktop\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Desktop\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
       "projectName": "PaperFactory",
-      "projectPath": "C:\\Users\\denni\\Desktop\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
-      "packagesPath": "C:\\Users\\denni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denni\\Desktop\\Learning_PaperFactory\\PaperFactory\\obj\\",
+      "projectPath": "C:\\Users\\Student\\Desktop\\Learning_PaperFactory\\PaperFactory\\PaperFactory.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Student\\Desktop\\Learning_PaperFactory\\PaperFactory\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\denni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5763,7 +5763,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -64,7 +64,7 @@ namespace PaperFactory.Controls
         private void ControlGrid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             _backgroundControlColor = ControlGrid.Background;
-            ControlGrid.Background = new SolidColorBrush(Color.FromRgb(170, 236, 176)); 
+            ControlGrid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B3F4E9")); 
         }
 
         private void ControlGrid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e) => ControlGrid.Background = _backgroundControlColor;

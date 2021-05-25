@@ -220,7 +220,9 @@ namespace PaperFactory.Pages
                     Img = m.MaterialImage, 
                     MinWarehouseAmount = m.MinWarehouseAmount,
                     Price = m.Price,
-                    Amount = m.WarehouseAmount
+                    Amount = m.WarehouseAmount,
+                    InPackAmount = m.AmountInPack,
+                    Metric = AppDbContext.Metrics.Where(mt => mt.Id == m.TypeOfMetric).First().MetricName
                 });
             foreach (var dbMaterial in dbMaterials)
             {
@@ -243,7 +245,9 @@ namespace PaperFactory.Pages
                     Image = dbMaterial.Img,
                     WhAmount = dbMaterial.Amount,
                     Price = dbMaterial.Price,
-                    Suppliers = dbSuppliers
+                    Suppliers = dbSuppliers,
+                    AmountInPack = dbMaterial.InPackAmount,
+                    MetricType = dbMaterial.Metric
                 };
 
                 materials.Add(material);
@@ -259,7 +263,9 @@ namespace PaperFactory.Pages
                     material.MinAmount,
                     material.WhAmount,
                     material.Price,
-                    material.Suppliers
+                    material.Suppliers,
+                    material.AmountInPack,
+                    material.MetricType
                 );
 
                 MaterialControls.Add(materialControl);
@@ -341,6 +347,8 @@ namespace PaperFactory.Pages
         public decimal MinAmount { get; set; }
         public decimal WhAmount { get; set; }
         public decimal Price { get; set; }
+        public decimal AmountInPack { get; set; }
+        public string MetricType { get; set; }
 
         private string _Image = "";
         public string Image

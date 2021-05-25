@@ -16,9 +16,12 @@ namespace PaperFactory
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Manager.AddMaterialWindow != null)
+            if (Manager.AddMaterialWindows != null)
             {
-                Manager.AddMaterialWindow.Close();
+                foreach (var window in Manager.AddMaterialWindows)
+                {
+                    window.Close();
+                }
             }
         }
     }

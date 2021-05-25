@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PaperFactory.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="800">
-    <Grid Background="#FFFFFF" x:Name="ControlGrid">
+    <Grid Background="#FFFFFF" x:Name="ControlGrid" MouseEnter="ControlGrid_MouseEnter" MouseLeave="ControlGrid_MouseLeave" MouseLeftButtonDown="ControlGrid_MouseLeftButtonDown" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Title="Одежда для ручек - Добавить материал" Height="600" Width="1000" Closing="Window_Closing">
+        Title="Одежда для ручек - Добавить/редактировать материал" Height="600" Width="1000" Closing="Window_Closing">
     <Grid Background="#FFFFFF">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -38,7 +38,7 @@
             <TextBox x:Name="CurrentWarehouseAmountTextBox" Text="Количество на складе" FontFamily="Candara" FontSize="14" Height="20" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,210" GotFocus="CurrentWarehouseAmountTextBox_GotFocus" LostFocus="CurrentWarehouseAmountTextBox_LostFocus"/>
             <TextBox x:Name="AmountInPackTextBox" Text="Количество в упаковке" FontFamily="Candara" FontSize="14" Height="20" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,140" GotFocus="AmountInPackTextBox_GotFocus" LostFocus="AmountInPackTextBox_LostFocus"/>
             <TextBox x:Name="MetricTypeTextBox" Text="Единица измерения" FontFamily="Candara" FontSize="14" Height="20" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,70" GotFocus="MetricTypeTextBox_GotFocus" LostFocus="MetricTypeTextBox_LostFocus"/>
-            <TextBox x:Name="ImageTextBox" Text="Фото" FontFamily="Candara" FontSize="14" Height="20" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" IsReadOnly="True"/>
+            <TextBox x:Name="ImageTextBox" Text="Фото" FontFamily="Candara" FontSize="14" Height="20" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" IsReadOnly="True" TextChanged="ImageTextBox_TextChanged"/>
             <Button x:Name="OpenPhotoButton" Content="Открыть" FontFamily="Candara" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="230,0,0,0" Click="OpenPhotoButton_Click"/>
             <Button x:Name="DefaultPhotoButton" Content="Без фото" FontFamily="Candara" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="300,0,0,0" Click="DefaultPhotoButton_Click"/>
             <DataGrid x:Name="SuppliersDataGrid" Height="250" Width="770" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="2" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False">
@@ -56,7 +56,7 @@
         </Grid>
 
         <Button x:Name="CancelButton" Content="Отмена" FontFamily="Candara" FontSize="14" Grid.Row="1" Grid.Column="1" Height="25" Width="70" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,1" Click="CancelButton_Click"/>
-        <Button x:Name="AddButton" Content="Добавить" FontFamily="Candara" FontSize="14" Grid.Row="1" Grid.Column="1" Height="25" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,1" Click="AddButton_Click"/>
+        <Button x:Name="AddButton" Content="Сохранить" FontFamily="Candara" FontSize="14" Grid.Row="1" Grid.Column="1" Height="25" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,1" Click="AddButton_Click"/>
 
     </Grid>
 </Window>

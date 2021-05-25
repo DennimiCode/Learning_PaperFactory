@@ -15,11 +15,52 @@ namespace PaperFactory
     /// </summary>
     public partial class AddMaterialWindow : Window
     {
+        public string NameOfMaterial
+        {
+            get => MaterialNameTextBox.Text;
+            set => MaterialNameTextBox.Text = value;
+        }
+        public string TypeOfMaterial
+        {
+            get => MaterialTypeTextBox.Text;
+            set => MaterialTypeTextBox.Text = value;
+        }
+        public string Price
+        {
+            get => MaterialPriceTextBox.Text;
+            set => MaterialPriceTextBox.Text = value;
+        }
+        public string MinWhAmount
+        {
+            get => MinWarehouseAmountTextBox.Text;
+            set => MinWarehouseAmountTextBox.Text = value;
+        }
+        public string WhAmount
+        {
+            get => CurrentWarehouseAmountTextBox.Text;
+            set => CurrentWarehouseAmountTextBox.Text = value;
+        }
+        public string InPackAmount
+        {
+            get => AmountInPackTextBox.Text;
+            set => AmountInPackTextBox.Text = value;
+        }
+        public string MetricType
+        {
+            get => MetricTypeTextBox.Text;
+            set => MetricTypeTextBox.Text = value;
+        }
+        public string Image
+        {
+            get => ImageTextBox.Text;
+            set => ImageTextBox.Text = value;
+        }
+
         ApplicationDataContext AppDbContext = new ApplicationDataContext();
         public AddMaterialWindow()
         {
             InitializeComponent();
-            Manager.AddMaterialWindow = this;
+            Manager.AddMaterialWindows.Add(this);
             PreviewImage.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + @"..\..\..\..\Images\EmptyImage.png", UriKind.Absolute));
             var dbSuppliers = AppDbContext.Suppliers.Select(s => s.PossibleSupplier).ToList();
             List<Item> items = new List<Item>();
@@ -224,6 +265,14 @@ namespace PaperFactory
             else
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void ImageTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (ImageTextBox.Text != "Фото")
+            {
+                PreviewImage.Source = new BitmapImage(new Uri(ImageTextBox.Text, UriKind.Absolute));
             }
         }
     }

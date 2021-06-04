@@ -86,7 +86,6 @@ C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\bin\Debug\netcore
 C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\kuzob\source\repos\Learning_PaperFactory\PaperFactory\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\PaperFactory.csprojAssemblyReference.cache
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Pages\LoginPage.g.cs
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Pages\RegisterPage.g.cs
@@ -225,3 +224,4 @@ C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Controls\MaterialControl.g.cs
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\AddMaterialWindow.baml
 C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\Controls\MaterialControl.baml
+C:\Users\Student\Desktop\Learning_PaperFactory\PaperFactory\obj\Debug\netcoreapp3.1\PaperFactory.csproj.AssemblyReference.cache

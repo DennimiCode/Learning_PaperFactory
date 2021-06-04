@@ -81,7 +81,7 @@ namespace PaperFactory.Pages
 
                 foreach (var materialControl in MaterialControls)
                 {
-                    if (SearchAlhorithm(SearchTextBox.Text, materialControl.MaterialName) <= SEARCHSTEP)
+                    if (SearchAlgorithm(SearchTextBox.Text, materialControl.MaterialName) <= SEARCHSTEP)
                     {
                         materialControlsSorted.Add(materialControl);
                     }
@@ -316,7 +316,7 @@ namespace PaperFactory.Pages
             
         }
 
-        public static int SearchAlhorithm(string string1, string string2)
+        public static int SearchAlgorithm(string string1, string string2)
         {
             if (string1 == null) throw new ArgumentNullException(nameof(string1));
             if (string2 == null) throw new ArgumentNullException(nameof(string2));
